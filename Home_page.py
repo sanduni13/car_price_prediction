@@ -19,7 +19,7 @@ if page == "Prediction":
     st.write('')
     st.write('')
 
-    st.video("2229697-uhd_3840_2160_30fps.mp4")
+    st.image("1969-Ringbrothers-Dodge-Charger-Tusk-001.jpg")
     
     st.write('')
     st.write('')
