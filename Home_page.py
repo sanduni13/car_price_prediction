@@ -20,6 +20,7 @@ if page == "Prediction":
     st.write('')
 
     st.image("1969-Ringbrothers-Dodge-Charger-Tusk-001.jpg")
+    st.image("2013-dodge-charger-r-t-muscle-car-lxygkenro11k1iro.jpg")
     
     st.write('')
     st.write('')
