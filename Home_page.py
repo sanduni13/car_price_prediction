@@ -8,6 +8,9 @@ import seaborn as sns
 import sklearn
 
 page = st.sidebar.selectbox("Explore Or Prediction", ("Prediction", "Explore"))
+st.write('')
+st.write('')
+st.image("1969-Ringbrothers-Dodge-Charger-Tusk-001.jpg")
 
 if page == "Prediction":
 
