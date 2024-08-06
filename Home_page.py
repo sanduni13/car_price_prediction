@@ -80,11 +80,6 @@ elif page == "Explore":
     st.write('')
     st.write('')
 
-    st.image("1969-Ringbrothers-Dodge-Charger-Tusk-001.jpg")
-
-    st.write('')
-    st.write('')
-
     df= pd.DataFrame(    
         np.random.randn(10, 2),    
         columns=['x', 'y'])
