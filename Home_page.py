@@ -5,6 +5,7 @@ import pandas as pd
 import datetime
 import xgboost as xgb
 import seaborn as sns
+import sklearn
 
 page = st.sidebar.selectbox("Explore Or Prediction", ("Prediction", "Explore"))
 
