@@ -4,10 +4,11 @@ import numpy as np
 import pandas as pd
 import datetime
 import xgboost as xgb
+import seaborn as sns
 
-page = st.sidebar.selectbox("Explore Or Home", ("Home", "Explore"))
+page = st.sidebar.selectbox("Explore Or Prediction", ("Prediction", "Explore"))
 
-if page == "Home":
+if page == "Prediction":
 
     st.title ("Car Price Preiction App")
 
@@ -54,40 +55,44 @@ if page == "Home":
     p7 = date_time.year - years
 
     data_new = pd.DataFrame({
-        'Present_Price':p1,
-        'Kms_Driven':p2,
-        'Fuel_Type':p3,
-        'Seller_Type':p4,
-        'Transmission':p5,
-        'Owner':p6,
-        'Age':p7
-        },index=[0])
-    
-    try:
-        if st.button('Predict'):
-            pred = model.predict(data_new)
-            if pred>0:
-                st.balloons()
-                st.success("You can sell your car for {:.2f} Lakhs".format(pred))    
-            else:
-                st.Warning("You can't able to sell this car")    
+    'Present_Price':p1,
+    'Kms_Driven':p2,
+    'Fuel_Type':p3,
+    'Seller_Type':p4,
+    'Transmission':p5,
+    'Owner':p6,
+    'Age':p7
+},index=[0])
+    try: 
+       if st.button('Predict'):
+           pred = model.predict(data_new)
+           if pred>0:
+               st.balloons()
+               st.success("You can sell your car for {:.2f} Lakhs".format(pred[0]))
+           else:
+               st.Warning("You can't able to sell this car")    
     except:
-            st.warning("Something went wrong please try again")
-
-
-
+        st.warning("Something went wrong please try again")            
 elif page == "Explore":
-
     st.title ("Car Price Preiction App")
+
+    st.write('')
+    st.write('')
+
+    df= pd.DataFrame(    
+        np.random.randn(10, 2),    
+        columns=['x', 'y'])
+    st.bar_chart(df)
+
+    st.write('')
+    st.write('')
+
+    df= pd.DataFrame(    
+        np.random.randn(10, 2),    
+        columns=['x', 'y'])
+    st.line_chart(df)
 
     rand=np.random.normal(1, 2, size=20)
     fig, ax = plt.subplots()
     ax.hist(rand, bins=15)
     st.pyplot(fig)
-
-    df= pd.DataFrame(    np.random.randn(10, 2),    
-    columns=['x', 'y'])
-    st.line_chart(df)
-
-    df= pd.DataFrame(    np.random.randn(10, 2),    columns=['x', 'y'])
-    st.bar_chart(df)
